@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Biblioteca Virtual - Colección de libros clásicos y modernos en PDF">
+    <meta name="keywords" content="biblioteca, libros, lectura, PDF, descargar, clásicos">
+    <meta name="author" content="Taller de Programación Web - UTP">
+    <title id="titulo-pagina">Biblioteca Virtual</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <!-- ===================== ENCABEZADO ===================== -->
+    <header class="encabezado">
+        <div class="encabezado-contenido">
+            <div class="logo">
+                <div id="logo-imagen-contenedor" style="display:none;">
+                    <img id="logo-imagen" src="" alt="Logo de la biblioteca" class="logo-img">
+                </div>
+                <span id="logo-icono-default" class="logo-icono">📚</span>
+                <div class="logo-texto">
+                    <h1 id="nombre-biblioteca">Biblioteca Virtual</h1>
+                    <p  id="eslogan-biblioteca">Tu espacio de lectura digital</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== MENÚ DE NAVEGACIÓN ===================== -->
+    <nav class="navegacion">
+        <ul class="menu">
+            <li><a href="#inicio"        class="menu-enlace activo">🏠 Inicio</a></li>
+            <li><a href="#libros"        class="menu-enlace">📖 Libros</a></li>
+            <li><a href="#multimedia"    class="menu-enlace">🎬 Multimedia</a></li>
+            <li><a href="#estadisticas"  class="menu-enlace">📊 Estadísticas</a></li>
+            <li><a href="#contacto"      class="menu-enlace">✉️ Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===================== CUERPO PRINCIPAL ===================== -->
+    <main class="principal" id="inicio">
+
+        <!-- BIENVENIDA -->
+        <section class="bienvenida" id="bienvenida">
+            <h2 id="titulo-bienvenida">Bienvenido a la Biblioteca Virtual</h2>
+            <p>Explora nuestra colección de libros clásicos y modernos.<br>
+               Visualiza y descarga títulos en formato PDF cuando quieras.</p>
+        </section>
+
+        <!-- BUSCADOR -->
+        <section class="seccion-buscador" id="libros">
+            <input type="text" id="buscador" class="buscador"
+                   placeholder="🔍 Buscar por nombre, autor, año o categoría...">
+        </section>
+
+        <!-- GRID DE LIBROS -->
+        <section class="seccion-libros">
+            <div id="contenedor-libros" class="grid-libros"></div>
+        </section>
+
+        <!-- MULTIMEDIA -->
+        <section class="seccion-multimedia" id="multimedia">
+            <div id="seccion-audios" style="display:none;">
+                <h2 class="seccion-titulo">🎵 Audios</h2>
+                <div id="lista-audios" class="grid-multimedia"></div>
+            </div>
+            <div id="seccion-videos" style="display:none;">
+                <h2 class="seccion-titulo" style="margin-top:30px;">🎬 Videos</h2>
+                <div id="lista-videos" class="grid-multimedia"></div>
+            </div>
+        </section>
+
+        <!-- ESTADÍSTICAS -->
+        <section class="seccion-estadisticas" id="estadisticas">
+            <h2 class="seccion-titulo">📊 Estadísticas de la Colección</h2>
+            <div class="tabla-contenedor">
+                <table class="tabla-estadisticas">
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Cantidad de Libros</th>
+                            <th>Año más antiguo</th>
+                            <th>Año más reciente</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-cuerpo"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FORMULARIO DE CONTACTO -->
+        <section class="seccion-contacto" id="contacto">
+            <h2 class="seccion-titulo">✉️ Contáctanos</h2>
+            <p class="seccion-descripcion">¿Tienes sugerencias de libros? ¡Escríbenos!</p>
+            <div class="formulario-contenedor">
+                <form class="formulario" id="formulario-contacto">
+                    <div class="campo-grupo">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                    </div>
+                    <div class="campo-grupo">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="tucorreo@email.com" required>
+                    </div>
+                    <div class="campo-grupo">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" placeholder="Ej: Sugerencia de libro" required>
+                    </div>
+                    <div class="campo-grupo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4"
+                                  placeholder="Escribe tu sugerencia aquí..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">Enviar mensaje ✉️</button>
+                </form>
+                <div id="mensaje-exito" class="mensaje-exito" style="display:none;">
+                    ✅ ¡Mensaje enviado! Gracias por tu sugerencia.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== PIE DE PÁGINA ===================== -->
+    <footer class="pie-pagina">
+        <div class="pie-contenido">
+            <div class="pie-seccion">
+                <h3>📚 <span id="footer-nombre">Biblioteca Virtual</span></h3>
+                <p>Tu espacio de lectura digital.<br>Accede a libros en cualquier momento.</p>
+            </div>
+            <div class="pie-seccion">
+                <h3>🔗 Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#libros">Libros</a></li>
+                    <li><a href="#multimedia">Multimedia</a></li>
+                    <li><a href="#estadisticas">Estadísticas</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="pie-seccion">
+                <h3>📖 Categorías</h3>
+                <ul id="footer-categorias"><li>Cargando...</li></ul>
+            </div>
+        </div>
+        <div class="pie-inferior">
+            <p>© 2026 <span id="footer-copy">Biblioteca Virtual IE. Maria Inmaculada Fe y Alegria 78 Pucará</span> — Taller de Programación Web — UTP</p>
+            <button class="btn-admin" onclick="abrirAdmin()">⚙️ Admin</button>
+        </div>
+    </footer>
+
+    <!-- ===================== MODAL: Visor PDF ===================== -->
+    <div id="visor" class="visor">
+        <div class="visor-cabecera">
+            <h2 id="visor-titulo">Visualizando libro</h2>
+            <button class="btn-cerrar" onclick="cerrarVisor()">✕ Cerrar</button>
+        </div>
+        <iframe id="iframe-pdf" src="" class="visor-iframe"></iframe>
+    </div>
+
+    <!-- ===================== MODAL: Panel Administrador ===================== -->
+    <div id="modal-admin" class="modal-overlay" style="display:none;">
+        <div class="modal-contenido modal-grande">
+
+            <div class="modal-cabecera">
+                <h2>⚙️ Panel de Administrador</h2>
+                <button class="btn-cerrar-modal" onclick="cerrarAdmin()">✕</button>
+            </div>
+
+            <!-- LOGIN -->
+            <div id="login-admin">
+                <p>Ingresa la contraseña para acceder:</p><br>
+                <div class="campo-grupo">
+                    <label for="input-password">Contraseña</label>
+                    <input type="password" id="input-password"
+                           placeholder="Contraseña de administrador" class="input-admin">
+                </div><br>
+                <button class="btn-ingresar" onclick="verificarPassword()">🔑 Ingresar</button>
+                <p id="error-password" class="error-texto" style="display:none;">
+                    ❌ Contraseña incorrecta.
+                </p>
+            </div>
+
+            <!-- PANEL (tras login) -->
+            <div id="panel-admin" style="display:none;">
+
+                <!-- PESTAÑAS -->
+                <div class="admin-tabs">
+                    <button class="tab-btn activo" onclick="cambiarTab('libros')">📚 Libros</button>
+                    <button class="tab-btn"        onclick="cambiarTab('calificaciones')">⭐ Calificaciones</button>
+                    <button class="tab-btn"        onclick="cambiarTab('multimedia')">🎬 Multimedia</button>
+                    <button class="tab-btn"        onclick="cambiarTab('configuracion')">🎨 Configuración</button>
+                </div>
+
+                <!-- ===== PESTAÑA: LIBROS ===== -->
+                <div id="tab-libros" class="tab-contenido">
+                    <div class="tab-acciones">
+                        <h3>Lista de Libros</h3>
+                        <button class="btn-nuevo" onclick="mostrarFormLibro(null)">➕ Agregar libro</button>
+                    </div>
+
+                    <!-- Formulario agregar/editar libro -->
+                    <div id="form-libro-contenedor" style="display:none;">
+                        <div class="form-libro">
+                            <h4 id="form-libro-titulo">➕ Nuevo Libro</h4>
+                            <input type="hidden" id="libro-id">
+                            <div class="form-grid">
+                                <div class="campo-grupo">
+                                    <label>Nombre del libro *</label>
+                                    <input type="text" id="libro-nombre" placeholder="Ej: El Gran Gatsby">
+                                </div>
+                                <div class="campo-grupo">
+                                    <label>Autor *</label>
+                                    <input type="text" id="libro-autor" placeholder="Ej: F. Scott Fitzgerald">
+                                </div>
+                                <div class="campo-grupo">
+                                    <label>Año de publicación *</label>
+                                    <input type="number" id="libro-anio" placeholder="Ej: 1925" min="0" max="2100">
+                                </div>
+                                <div class="campo-grupo">
+                                    <label>Categoría *</label>
+                                    <input type="text" id="libro-categoria" placeholder="Ej: Clásico, Fantasía...">
+                                </div>
+                                <div class="campo-grupo campo-completo">
+                                    <label>Descripción</label>
+                                    <textarea id="libro-descripcion" rows="3"
+                                              placeholder="Breve descripción del libro..."></textarea>
+                                </div>
+                                <div class="campo-grupo campo-completo">
+                                    <label>URL de la portada (imagen) *</label>
+                                    <input type="text" id="libro-portada"
+                                           placeholder="https://ejemplo.com/portada.jpg">
+                                </div>
+                                <div class="campo-grupo campo-completo">
+                                    <label>URL del PDF *</label>
+                                    <input type="text" id="libro-pdf"
+                                           placeholder="https://ejemplo.com/libro.pdf  ó  ./libros/archivo.pdf">
+                                </div>
+                            </div>
+                            <p id="error-libro" class="error-texto" style="display:none;">
+                                ❌ Completa todos los campos obligatorios (*).
+                            </p>
+                            <div class="form-botones">
+                                <button class="btn-guardar"  onclick="guardarLibro()">💾 Guardar libro</button>
+                                <button class="btn-cancelar" onclick="cancelarFormLibro()">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabla de libros -->
+                    <div class="tabla-contenedor">
+                        <table class="tabla-admin">
+                            <thead>
+                                <tr>
+                                    <th>Portada</th>
+                                    <th>Nombre</th>
+                                    <th>Autor</th>
+                                    <th>Año</th>
+                                    <th>Categoría</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-libros-cuerpo"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ===== PESTAÑA: CALIFICACIONES ===== -->
+                <div id="tab-calificaciones" class="tab-contenido" style="display:none;">
+                    <h3>Asignar Calificaciones</h3><br>
+                    <div class="tabla-contenedor">
+                        <table class="tabla-admin">
+                            <thead>
+                                <tr>
+                                    <th>Libro</th>
+                                    <th>Autor</th>
+                                    <th>Calificación</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-admin-cuerpo"></tbody>
+                        </table>
+                    </div><br>
+                    <button class="btn-guardar" onclick="guardarCalificaciones()">💾 Guardar calificaciones</button>
+                </div>
+
+                <!-- ===== PESTAÑA: MULTIMEDIA ===== -->
+                <div id="tab-multimedia" class="tab-contenido" style="display:none;">
+
+                    <!-- AUDIOS -->
+                    <div class="multimedia-bloque">
+                        <div class="tab-acciones">
+                            <h3>🎵 Audios</h3>
+                            <button class="btn-nuevo" onclick="mostrarFormMultimedia('audio')">➕ Agregar audio</button>
+                        </div>
+                        <div id="form-audio" style="display:none;" class="form-multimedia">
+                            <div class="form-grid">
+                                <div class="campo-grupo">
+                                    <label>Título del audio *</label>
+                                    <input type="text" id="audio-titulo" placeholder="Ej: Música clásica">
+                                </div>
+                                <div class="campo-grupo campo-completo">
+                                    <label>URL del audio (mp3, ogg, etc.) *</label>
+                                    <input type="text" id="audio-url"
+                                           placeholder="https://ejemplo.com/audio.mp3">
+                                </div>
+                            </div>
+                            <div class="form-botones">
+                                <button class="btn-guardar"  onclick="agregarMultimedia('audio')">💾 Agregar</button>
+                                <button class="btn-cancelar" onclick="ocultarFormMultimedia('audio')">Cancelar</button>
+                            </div>
+                        </div>
+                        <div id="lista-admin-audios" class="lista-multimedia-admin"></div>
+                    </div>
+
+                    <hr class="separador">
+
+                    <!-- VIDEOS -->
+                    <div class="multimedia-bloque">
+                        <div class="tab-acciones">
+                            <h3>🎬 Videos</h3>
+                            <button class="btn-nuevo" onclick="mostrarFormMultimedia('video')">➕ Agregar video</button>
+                        </div>
+                        <div id="form-video" style="display:none;" class="form-multimedia">
+                            <div class="form-grid">
+                                <div class="campo-grupo">
+                                    <label>Título del video *</label>
+                                    <input type="text" id="video-titulo" placeholder="Ej: Trailer del libro">
+                                </div>
+                                <div class="campo-grupo campo-completo">
+                                    <label>URL del video o embed de YouTube *</label>
+                                    <input type="text" id="video-url"
+                                           placeholder="https://www.youtube.com/embed/XXXXXXX  ó  https://ejemplo.com/video.mp4">
+                                </div>
+                            </div>
+                            <p class="ayuda-texto">
+                                💡 YouTube: abre el video → Compartir → Insertar →
+                                copia la URL del src (ej: https://www.youtube.com/embed/XXXXXXX)
+                            </p>
+                            <div class="form-botones">
+                                <button class="btn-guardar"  onclick="agregarMultimedia('video')">💾 Agregar</button>
+                                <button class="btn-cancelar" onclick="ocultarFormMultimedia('video')">Cancelar</button>
+                            </div>
+                        </div>
+                        <div id="lista-admin-videos" class="lista-multimedia-admin"></div>
+                    </div>
+
+                </div>
+
+                <!-- ===== PESTAÑA: CONFIGURACIÓN ===== -->
+                <div id="tab-configuracion" class="tab-contenido" style="display:none;">
+                    <h3>🎨 Configuración del Sitio</h3><br>
+                    <div class="form-libro">
+                        <div class="form-grid">
+                            <div class="campo-grupo campo-completo">
+                                <label>Nombre de la biblioteca</label>
+                                <input type="text" id="config-nombre" placeholder="Ej: Biblioteca Virtual UTP">
+                            </div>
+                            <div class="campo-grupo campo-completo">
+                                <label>Eslogan o descripción corta</label>
+                                <input type="text" id="config-eslogan"
+                                       placeholder="Ej: Tu espacio de lectura digital">
+                            </div>
+                            <div class="campo-grupo campo-completo">
+                                <label>URL del logo / insignia (imagen)</label>
+                                <input type="text" id="config-logo"
+                                       placeholder="https://ejemplo.com/logo.png">
+                            </div>
+                        </div>
+                        <div class="preview-logo">
+                            <p class="ayuda-texto">💡 Vista previa del logo:</p>
+                            <div class="preview-logo-caja" id="preview-logo-caja">
+                                <span style="color:#aaa;">Sin logo configurado</span>
+                            </div>
+                        </div>
+                        <div class="form-botones">
+                            <button class="btn-guardar"  onclick="guardarConfiguracion()">💾 Guardar configuración</button>
+                            <button class="btn-cancelar" onclick="previewLogo()">👁️ Previsualizar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== BOTÓN EXPORTAR (siempre visible tras login) ===== -->
+                <div class="exportar-bloque">
+                    <div class="exportar-info">
+                        <strong>📥 Exportar datos.js</strong>
+                        <p>
+                            Descarga el archivo con todos tus cambios (libros, multimedia, config)
+                            y súbelo a la carpeta <code>js/</code> de tu hosting para publicarlos.
+                        </p>
+                    </div>
+                    <button class="btn-exportar" onclick="exportarDatos()">
+                        📥 Exportar datos.js
+                    </button>
+                </div>
+
+            </div><!-- fin panel-admin -->
+        </div>
+    </div>
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <!-- 1. datos.js: contiene los datos (libros, config, etc.) -->
+    <script src="../js/datos.js"></script>
+    <!-- 2. script.js: contiene la lógica (funciones) -->
+    <script src="../js/script.js"></script>
+
+</body>
+</html>
