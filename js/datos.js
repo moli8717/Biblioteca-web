@@ -30,7 +30,7 @@ var LIBROS_DEFAULT = [
         "categoria": "Clásico",
         "descripcion": "Una novela que retrata el sueño americano en los años veinte, llena de opulencia, amor y decepción.",
         "portada": "https://m.media-amazon.com/images/I/61OVAqqS7ZL._SL1000_.jpg",
-        "pdf": "./libros/gatsby.pdf"
+        "pdf": "gatsby.pdf"
     },
     {
         "id": 2,
@@ -40,7 +40,7 @@ var LIBROS_DEFAULT = [
         "categoria": "Distopía",
         "descripcion": "Una novela distópica sobre un estado totalitario donde el gobierno vigila y controla cada aspecto de la vida.",
         "portada": "https://production-tailoy-repo-magento-statics.s3.amazonaws.com/imagenes/872x872/productos/i/l/i/libro-1984-george-orwell-109980-default-1.jpg",
-        "pdf": "./libros/1984.pdf"
+        "pdf": "1984.pdf"
     },
     {
         "id": 3,
@@ -50,7 +50,7 @@ var LIBROS_DEFAULT = [
         "categoria": "Realismo Mágico",
         "descripcion": "La saga de la familia Buendía en el pueblo mágico de Macondo, obra cumbre del realismo mágico latinoamericano.",
         "portada": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_M6efFsBrMfXyqdojSo9BkRrceIKBDv7dOQ&s",
-        "pdf": "./libros/soledad.pdf"
+        "pdf": "soledad.pdf"
     },
     {
         "id": 4,
@@ -70,7 +70,7 @@ var LIBROS_DEFAULT = [
         "categoria": "Romance",
         "descripcion": "La historia de Elizabeth Bennet y el señor Darcy, sobre el amor, los prejuicios y la sociedad inglesa.",
         "portada": "https://m.media-amazon.com/images/I/71HqC9TzbWL._SL1000_.jpg",
-        "pdf": "./libros/orgullo.pdf"
+        "pdf": "orgullo.pdf"
     },
     {
         "id": 6,
@@ -80,7 +80,7 @@ var LIBROS_DEFAULT = [
         "categoria": "Infantil",
         "descripcion": "Un pequeño príncipe viaja por el universo descubriendo la esencia de las cosas a través de los ojos de un niño.",
         "portada": "https://m.media-amazon.com/images/I/71AVK5VIAzL._SL1000_.jpg",
-        "pdf": "./libros/principito.pdf"
+        "pdf": "principito.pdf"
     },
     {
         "id": 7,
@@ -90,7 +90,7 @@ var LIBROS_DEFAULT = [
         "categoria": "Fantasía",
         "descripcion": "Un joven huérfano descubre que es mago y comienza su formación en el Colegio Hogwarts de Magia y Hechicería.",
         "portada": "https://m.media-amazon.com/images/I/81C6QScDA2L._SL1000_.jpg",
-        "pdf": "./libros/harry.pdf"
+        "pdf": "harry.pdf"
     }
 ];
 
