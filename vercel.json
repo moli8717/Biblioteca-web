@@ -1,7 +1,5 @@
 {
-  "cleanUrls": true,
-  "public": false,
-  "routes": [
-    { "src": "/(.*)", "dest": "/libros/$1" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/libros/$1" }
   ]
 }
